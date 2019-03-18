@@ -79,7 +79,7 @@ git clone https://github.com/pmjobsearch01/fx-orders-processor.git
 
 If you have maven installed and in the path then use below command to build and run junit test cases that proves the core functions,
 
-- Go to the folder where the code is checked-out (you should see the pom.xml in your current folder)
+Go to the folder where the code is checked-out (you should see the pom.xml in your current folder)
 
 cd fx-orders-processor
 
