@@ -24,10 +24,10 @@ The basic configuration are as below
 
 ## Start Zookeeper
 * Download zookeeper from http://zookeeper.apache.org/releases.html#download and extract it to local drive. 
-* Rename “zoo_sample.cfg” to “zoo.cfg” (for windows machines only). 
+* Rename “zoo_sample.cfg” to “zoo.cfg” inside config directory (for windows machines only). 
 * Also edit dataDir entry inside zoo.cfg to a valid path e.g. \zookeeper\data (for windows machines only).
 * Ensure you have java installed and JAVA_HOME is set in the system environment variable (for windows machines only). 
-* Add ZOOKEEPER_HOME environment variable upto bin path of your zookeeper directory (for windows machines only)
+* Add ZOOKEEPER_HOME environment variable before bin path of your zookeeper directory (for windows machines only)
 * Add ;%ZOOKEEPER_HOME%\bin; to PATH variable (for windows machines only)
 
 - `double click bin/zkServer.cmd` (windows)
@@ -44,30 +44,31 @@ The basic configuration are as below
 - `bin/kafka-server-start.sh config/server.properties` (UNIX)
 
 ## Create Kafka Topic
-- `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeCapture` (UNIX)
-
-- `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeRequest` (UNIX)
-
-- `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeReply` (UNIX)
-
 - `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeCapture` (Windows)
 
 - `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeRequest` (Windows)
 
 - `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeReply` (Windows)
 
+- `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeCapture` (UNIX)
+
+- `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeRequest` (UNIX)
+
+- `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tradeReply` (UNIX)
+
 
 ## Start Cassandra
 * dwonload cassandra from http://cassandra.apache.org/download/
 * Extract it to local drive
-* Simply run the installer and leave everything default
+* Run the installer and leave everything default
 * Go to cassandra installation directory inside bin folder
-* Leave everything default
 
 - `double click on cassandra.bat` (Windows)
 - `run equivalent shell script in unix` (UNIX)
 
+
 ## By default cassandra will run on port 9042 and Kafka will run on port 9092 and Apache Zookeeper will run on port 2181. If you change any of these default setting then accordingly update microservice properties inside resource folder.
+
 
 JUnit Test
 ------------------
